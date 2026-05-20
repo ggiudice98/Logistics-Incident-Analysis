@@ -46,7 +46,7 @@ SELECT d.first_name,
         SUM(dm.average_mpg) AS total_avg_mpg
 FROM driver_monthly_metrics dm JOIN drivers d ON dm.driver_id = d.driver_id JOIN driver_tenure dt ON dt.driver_id = dm.driver_id
 GROUP BY d.first_name, d.last_name, dt.tenure_years
-ORDER BY dt.tenure_years DESC
+ORDER BY total_avg_mpg DESC
 
 -- 4. Revenue per Driver
 

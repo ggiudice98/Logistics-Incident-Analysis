@@ -45,24 +45,18 @@ WHERE l.load_status = 'Completed'
 GROUP BY r.route_id, r.origin_city, r.destination_city, r.typical_distance_miles
 ORDER BY total_fuel_cost DESC 
 
---Q4  Route P&L 
+--4 Quarterly Revenue Trend
 
-WITH route_revenue AS ( SELECT r.route_id,
-                                r.origin_city,
-                                r.destination_city,
-                                SUM(revenue + fuel_surcharge + accessorial_charges) AS total_revenue
-                        FROM routes r JOIN loads l ON r.route_id = l.route_id 
-                        WHERE l.load_status = 'Completed'
-),
+SELECT 
+    DATE_TRUNC('quarter', load_date) AS quarter,
+    COUNT(load_id) AS total_loads,
+    SUM(revenue + fuel_surcharge + accessorial_charges) AS total_revenue,
+    ROUND(AVG(revenue + fuel_surcharge + accessorial_charges), 2) AS avg_revenue_per_load
+FROM loads
+WHERE load_status = 'Completed'
+GROUP BY DATE_TRUNC('quarter', load_date)
+ORDER BY quarter ASC;
 
-route_costs AS ( 
-                    FROM routes r JOIN 
-
-)
-
-
-
--- Q11: Detention time per route
 
 
 
