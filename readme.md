@@ -1,9 +1,8 @@
-# Logistics Operations & Fleet Audit (SQL + Power BI)
-*An Operational Health Assessment of a Class 8 Trucking Company (2022–2024)*
+# Logistics Incidents Analysis (SQL + Power BI)
+*An Incidents Assessment of a Class 8 Trucking Company (2022–2024)*
 
 ## Project Overview
-This project performs an end-to-end audit of a fictional logistics company's operations using a synthetic relational database modeled on real-world industry data. Moving beyond surface-level revenue metrics, the analysis examines Route Profitability, Fleet Maintenance costs, Driver Performance, and Safety Incidents to identify operational inefficiencies and liability exposure.
-
+This project performs an analysis of a fictional logistics company's incidents reports using a synthetic relational database modeled on real-world industry data. 
 The project is structured in two parts: an Exploratory Data Analysis establishing baseline operational health, followed by a focused Driver Risk & Incident Analysis producing actionable safety findings.
 
 **Dataset:** [Logistics Operations Database — Kaggle (Yogape Rodriguez)](https://www.kaggle.com/datasets/yogape/logistics-operations-database)
