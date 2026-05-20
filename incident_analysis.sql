@@ -203,3 +203,13 @@ FROM safety_incidents si JOIN trips t  ON si.driver_id = t.driver_id AND si.trip
 JOIN loads l  ON t.load_id = l.load_id JOIN routes r ON l.route_id = r.route_id
 GROUP BY l.route_id, r.origin_city, r.destination_city, DATE_TRUNC('month', si.incident_date)
 ORDER BY incident_month DESC, total_incidents DESC;
+
+--7. Per Incident Type Cost 
+
+SELECT ROUND(SUM(COALESCE(vehicle_damage_cost, 0) + COALESCE(cargo_damage_cost, 0) + COALESCE(claim_amount, 0))
+          FILTER (WHERE at_fault_flag = true), 2) AS at_fault_cost,
+    ROUND(SUM(COALESCE(vehicle_damage_cost, 0) + COALESCE(cargo_damage_cost, 0) + COALESCE(claim_amount, 0))
+          FILTER (WHERE at_fault_flag = false AND preventable_flag = true), 2) AS preventable_not_at_fault_cost,
+    ROUND(SUM(COALESCE(vehicle_damage_cost, 0) + COALESCE(cargo_damage_cost, 0) + COALESCE(claim_amount, 0)), 2) AS total_cost
+FROM safety_incidents;
+
