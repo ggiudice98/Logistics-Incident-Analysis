@@ -14,7 +14,7 @@ A synthetic operational database from a fictional Class 8 trucking company spann
 
 | Layer | Tools |
 |---|---|
-| Language | SQL (PostgreSQL 16), DAX |
+| Language | SQL (PostgreSQL), DAX |
 | Visualization | Power BI |
 | Key Techniques | CTEs, Window Functions, Multi-Table Joins, Conditional Aggregation |
 
