@@ -48,11 +48,11 @@ A focused safety audit built on top of the EDA findings. Moving from descriptive
 **Incident Overview**
 Fleet-wide breakdown of total incidents by fault type (at-fault, preventable not-at-fault, not-at-fault) and severity (Severe, Moderate, Minor). Preventable incident rate calculated as a headline KPI.
 
+**Driver Risk Segmentation Model**
+150 drivers scored across five dimensions: incident severity, fault type, tenure amplifier, experience amplifier, and fuel efficiency delta versus route baseline. Drivers classified into four risk tiers — High, Medium, Low, and No Risk — to prioritize safety intervention.
+
 **Route Incident Analysis**
 Incidents mapped to origin and destination city by month, identifying routes with disproportionate safety risk. Preventable percentage calculated per route to separate high-volume routes from genuinely dangerous ones.
-
-**Driver Risk Segmentation Model**
-400+ drivers scored across five dimensions: incident severity, fault type, tenure amplifier, experience amplifier, and fuel efficiency delta versus route baseline. Drivers classified into four risk tiers — High, Medium, Low, and No Risk — to prioritize safety intervention.
 
 *Findings compiled into an Incident Analysis Report and Power BI dashboard.*
 
